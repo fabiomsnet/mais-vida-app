@@ -1,0 +1,23 @@
+<ion-header no-border>
+
+    <ion-navbar no-border>
+        <ion-title>Detalhes</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="card">
+        <div class="img">
+            <img src="{{ medico?.picture }}" alt="medico img goes here">
+        </div>
+        <div class="card-content">
+            <h3 class="card-title">{{ medico?.firstName }} {{ medico?.lastName }}</h3>
+            <p class="card-message">
+                email {{ medico?.email }}, status [ {{ medico?.active }}, {{ medico?.busy }} ]
+            </p>
+            <button ion-button round class="button">Editar</button>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,32 @@
+page-detail-medico {
+    $br: 3px;
+    $black: #272d2d;
+    $ghost: #f0f1f3;
+    $grey: #50514f;
+    .img {
+        img {
+            margin: 50px auto;
+            display: block;
+            width: 75px;
+            height: 75px;
+            border-radius: 75px;
+        }
+    }
+    .card {
+        background: lighten($ghost, 10%);
+        background: linear-gradient(to bottom, white, $ghost);
+        border-radius: $br;
+        width: calc(100% -20px);
+        height: 100%;
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.12);
+        padding: 0px 0px 16px 0;
+        .card-content {
+            text-align: center;
+            padding: 1em 2em;
+            .card-message {
+                font-size: 12px;
+                line-height: 1.5;
+            }
+        }
+    }
+}
