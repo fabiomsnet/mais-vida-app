@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {UserProvider} from './../../providers';
+import { MedicosProvider } from '../../providers/index';
 
 export interface IMedico {
   picture: string;
@@ -105,8 +105,10 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private user: UserProvider
-  ) {}
+    private medicosProvider: MedicosProvider
+  ) {
+    this.medicosProvider.get().then(res => console.log('res medco: ', res))
+  }
 
   addMedico() {
     this.navCtrl.push('add-medico');

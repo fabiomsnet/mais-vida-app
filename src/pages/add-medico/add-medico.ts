@@ -16,17 +16,6 @@ import {
   templateUrl: 'add-medico.html',
 })
 export class AddMedicoPage {
-  // <!-- export interface IMedico {
-  //   picture: string;
-  //   firstName: string;
-  //   lastName: string;
-  //   specialty: string;
-  //   email: string;
-  //   city: string;
-  //   state: string;
-  //   active: boolean;
-  //   busy: boolean;
-  // } -->
   cadastro: FormGroup;
   constructor(
     public navCtrl: NavController, 

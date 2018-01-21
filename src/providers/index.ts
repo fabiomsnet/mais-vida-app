@@ -16,4 +16,4 @@ export const Providers: any[] = [
 
 export const ProvidersNative = [SplashScreen, StatusBar];
 
-export {UserProvider};
+export { UserProvider, MedicosProvider };
