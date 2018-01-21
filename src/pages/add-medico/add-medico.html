@@ -6,7 +6,79 @@
 
 </ion-header>
 
-
 <ion-content>
+    <form [formGroup]="cadastro" novalidate (ngSubmit)="save(cadastro.value)">
+        <ion-item>
+            <ion-label floating>Especialidade</ion-label>
+            <ion-select formControlName="specialty">
+                <ion-option value="Cardiologia">Cardiologia</ion-option>
+                <ion-option value="Cirurgia Geral">Cirurgia Geral</ion-option>
+                <ion-option value="Endocrinologia">Endocrinologia</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>
+                Nome
+            </ion-label>
+            <ion-input type="text" formControlName="firstName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>
+                Sobrenome
+            </ion-label>
+            <ion-input type="text" formControlName="lastName"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>
+                Email
+            </ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>
+                Estado
+            </ion-label>
+            <ion-input type="text" formControlName="state"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>
+                Cidade
+            </ion-label>
+            <ion-input type="text" formControlName="city"></ion-input>
+        </ion-item>
 
+        <ion-list radio-group formControlName="busy" mode="md" no-lines>
+
+            <ion-list-header>
+                Status
+            </ion-list-header>
+
+
+            <ion-item floating>
+                <ion-label>Ocupado</ion-label>
+                <ion-radio value="true" mode="md"></ion-radio>
+            </ion-item>
+
+            <ion-item floating>
+                <ion-label>Disponível</ion-label>
+                <ion-radio value="false" mode="md"></ion-radio>
+            </ion-item>
+
+        </ion-list>
+
+        <ion-list radio-group mode="md" no-lines>
+
+            <ion-list-header>
+                Situação
+            </ion-list-header>
+            <ion-item radio-group formControlName="active">
+                <ion-label>Ativo</ion-label>
+                <ion-radio checked="true" mode="md" value="true"></ion-radio>
+            </ion-item>
+
+        </ion-list>
+        <div class="btn" text-aling>
+            <button ion-button outline type="submit" [disabled]="!cadastro.valid">SALVAR</button>
+        </div>
+    </form>
 </ion-content>

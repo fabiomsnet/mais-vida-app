@@ -8,7 +8,7 @@ import { UserProvider } from './../providers';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:string;
+  rootPage:string = 'login';
 
   constructor(
     platform: Platform, 
@@ -21,6 +21,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      this.chooseHomeOrLogin();
     });
   }
 

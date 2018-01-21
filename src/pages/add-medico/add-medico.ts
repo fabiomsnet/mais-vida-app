@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validator,
+  Validators,
+} from '@angular/forms';
 
 @IonicPage({
   name: 'add-medico'
@@ -9,12 +16,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-medico.html',
 })
 export class AddMedicoPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  // <!-- export interface IMedico {
+  //   picture: string;
+  //   firstName: string;
+  //   lastName: string;
+  //   specialty: string;
+  //   email: string;
+  //   city: string;
+  //   state: string;
+  //   active: boolean;
+  //   busy: boolean;
+  // } -->
+  cadastro: FormGroup;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private fb: FormBuilder
+  ) {
+      this.cadastro = this.fb.group({
+        email: ['', [Validators.required, Validators.email]],
+        firstName: ['', [Validators.required]],
+        lastName: ['', [Validators.required]],
+        specialty: ['', [Validators.required]],
+        city: ['', [Validators.required]],
+        state: ['', [Validators.required]],
+        active: ['', [Validators.required]],
+        busy: ['', [Validators.required]],
+      });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddMedicoPage');
+  save(medico) {
+    console.log('medio salvar', medico);
   }
 
 }

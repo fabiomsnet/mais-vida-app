@@ -29,4 +29,8 @@ export class UserProvider {
   isUserLogged(): boolean {
     return localStorage.getItem(this.KEY_LOGIN_USER) ? true : false; 
   }
+
+  logOut(): any {
+    return localStorage.remove(this.KEY_LOGIN_USER);
+  }
 }
